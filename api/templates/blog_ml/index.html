@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+        <link href="{%static 'css/styles.css'%}" rel="stylesheet" type = "text/css">
+        <title>NewsClues</title>
+    </head>
+    <body id = "beautify" href = "/">
+        <h1 class="heading nav">
+            <img id="center" height="55px" src="{%static 'icons/news.gif'%}" alt="Logo" />
+            NewsClues
+        </h1>
+        <form id="center" action = "" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <img height = "500px" src = "{%static 'icons/realfake.jpg'%}" alt = "image">
+            <br>
+            <input height = 100px width = 30px type = "text" id = "news" name = "news" required>
+            <input type = "submit" value = "Verify">    
+        </form>
+        {% if val%}
+        <p id = "text"> <strong id = "large">{{val}} : {{val}}</strong> </p>
+        {% endif %}
+    </body>
+</html>
